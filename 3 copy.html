@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício "situação dos alunos"</title>
+</head>
+
+<body>
+    <!-- Criar um programa em JavaScript que leia quatro notas de um/a aluno/a e depois imprima a média aritmética das notas e a situação
+     do aluno, a partir dos seguintes critérios,
+     média < 5 REPROVADO
+     média entre 5 e 6.9 RECUPERAÇÂO
+     média > 7 APROVADO
+     -->
+    
+
+     <form action="">
+        Nota1: <br>
+        <input type="number" id="n1"> <br>
+        Nota2: <br>
+        <input type="number" id="n2"> <br>
+        Nota3: <br>
+        <input type="number" id="n3"> <br>
+        Nota4: <br>
+        <input type="number" id="n4"> <br>
+        <br>
+        <button type="button" onclick="calcular()">calcular</button>>
+     </form>
+     <div id="resposta"></div>
+
+     <Script>
+        function calcular() {
+            /*Pegando os dados da Tela*/
+        var n1j =parseFloat(document.getElementById("n1").value); 
+        var n2j =parseFloat(document.getElementById("n2").value); 
+        var n3j =parseFloat(document.getElementById("n3").value); 
+        var n4j =parseFloat(document.getElementById("n4").value); 
+        //Calcular a Média
+        var msg = ``;
+        var md = (n1j + n2j + n3j + n4j)/4;
+
+        if(md >= 7){
+            msg = "APROVADO";
+        } else{
+            if(md >=5){
+                msg = "RECUPERAÇÃO";
+            } else{
+                msg = "REPROVADO";
+            }
+
+        }
+       
+    //Impressão na Tela
+    document.getElementById("resposta").innerHTML = 
+    "situação :"+ msg + "<br/>" + "Média "+ md;    
+    }
+
+     </Script>
+</body>
+
+</html>
